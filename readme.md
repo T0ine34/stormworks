@@ -27,8 +27,8 @@ This repository contains various projects and scripts for enhancing the Stormwor
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/T0ine34/stormworks-projects.git
-    cd stormworks-projects
+    git clone https://github.com/T0ine34/stormworks.git
+    cd stormworks
     ```
 
 2. Minify the scripts:

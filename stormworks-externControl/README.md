@@ -10,29 +10,21 @@ Stormworks ExternControl is a project designed to provide external control capab
 
 ## Installation
 
-1. **Clone the repository:**
 
-    ```sh
-    git clone https://github.com/T0ine34/stormworks-externControl.git
-    cd stormworks-externControl
-    ```
-
-> You only need to do steps below if you want to edit the project. If you only want to use the server, please refer to the [Usage](#usage) section.
-
-2. **Set up the Python virtual environment:**
+1. **Set up the Python virtual environment:**
 
     ```sh
     python3 -m venv env
     source env/bin/activate
     ```
 
-3. **Install Python dependencies:**
+2. **Install Python dependencies:**
 
     ```sh
     pip install -r requirements.txt
     ```
 
-4. **Install Node.js dependencies:**
+3. **Install Node.js dependencies:**
 
     ```sh
     npm install
