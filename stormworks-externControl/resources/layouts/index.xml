@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<buttonLayout>
+    <Group>
+        <Button channel="1" color="#FF0000" col="1" row="1" width="1" height="1" toggle="true" icon="propeller" input="none"></Button>
+        <Button channel="2" color="#008800" col="2" row="1" width="1" height="1" toggle="false" icon="2" input="none"></Button>
+        <Button channel="3" color="RGB(0,0,200)" col="1" row="2" width="2" height="1" toggle="true" icon="3" input="output:2"></Button>
+    </Group>
+    <Button channel="4" color="RGB(0,0,200)" col="3" row="3" width="1" height="1" toggle="true" icon="4" input="none"></Button>
+    <Slider channel="1" color="#FFFF00" col="1" row="3" width="2" height="1" min="0" max="100" step="1" value="50" direction="right" input="output:2"></Slider>
+    <Slider channel="2" color="#FF0000" col="3" row="1" width="1" height="2" min="0" max="100" step="1" value="50" direction="up" button="true"></Slider>
+    <MonoLight channel="1" color="#dddd00" col="4" row="4" width="1" height="1" icon = "pod"></MonoLight>
+    <RGBLight channel="1,2,3" col="5" row="4" width="1" height="1" icon = "pod"></RGBLight>
+    <Keypad channel="3" color="#FF0000" col="4" row="1" width="2" height="4" decimal="false" max="32" min = "1"></Keypad>
+    <!-- <NumberDisplay channel="1" col="3" row="5" width="1" height="1" color="#ff0000" decimal="false"></NumberDisplay>
+    <NumberDisplay channel="2" col="4" row="5" width="1" height="1" color="#00ff00" decimal="false"></NumberDisplay>
+    <NumberDisplay channel="3" col="5" row="5" width="1" height="1" color="#0000ff" decimal="false"></NumberDisplay> -->
+    <RotationSelector channel="4" col="1" row="4" width="1" height="2" min="0" max="1" innerRotation="90" neutral="up">
+        <Slider channel="5" color="#FFFF00" col="1" row="1" width="1" height="1" min="-1" max="1" step="0.1" value="0" direction="left"></Slider>
+    </RotationSelector>
+    <RotationSelector channel="6" col="2" row="4" width="1" height="2" min="0" max="1" innerRotation="90" neutral="up">
+        <Slider channel="7" color="#FFFF00" col="1" row="1" width="1" height="1" min="-1" max="1" step="0.1" value="0" direction="left"></Slider>
+    </RotationSelector>
+</buttonLayout>

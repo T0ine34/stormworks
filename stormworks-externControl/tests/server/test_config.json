@@ -1,0 +1,22 @@
+{
+    "test": "value",
+    "test2": 2,
+    "test3": [1, 2, 3],
+    "test4": {
+        "a": 1,
+        "b": 2
+    },
+    "group": {
+        "test1": 1,
+        "test2": 2,
+        "test3": 3
+    },
+    "group2": {
+        "test1": 1,
+        "test2": 2,
+        "subgroup": {
+            "test1": 1,
+            "test2": 2
+        }
+    }
+}

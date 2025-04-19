@@ -1,0 +1,21 @@
+{
+    "spec_dir": "tests/client",
+  
+    "spec_files": [
+      "**/*[tT]est.?(m)js",
+      "!**/*nospec.js"
+    ],
+    "helpers": [
+      "helpers/**/*.?(m)js"
+    ],
+    
+    "env": {
+      "failSpecWithNoExpectations": false,
+      
+      "stopSpecOnExpectationFailure": false,
+  
+      "stopOnSpecFailure": false,
+  
+      "random": false
+    }
+  }

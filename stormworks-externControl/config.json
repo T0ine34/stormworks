@@ -1,0 +1,11 @@
+{
+    "api": {
+        "port": 3000,
+        "host": "localhost"
+    },
+    "app": {
+        "path": "dist/front"
+    },
+    "resources" : "resources",
+    "node_modules" : "node_modules"
+}

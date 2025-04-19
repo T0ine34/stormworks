@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Debug</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        setInterval(() => {
+            fetch("/debug/data")
+                .then(r => {
+                    if (!r.ok) {
+                        throw new Error("Server unavailable");
+                    }
+                    return r.json();
+                })
+                .then(data => {
+                    document.getElementById("error").innerText = "";
+                    document.getElementById("mem").innerText = data.mem;
+                    document.getElementById("cpu").innerText = data.cpu;
+                    document.getElementById("uptime").innerText = data.uptime;
+                    document.getElementById("error").innerText = "";
+                    // state is a json object
+                    let state = document.getElementById("state").innerText;
+                    state = "\n";
+                    for (let key in data.state) {
+                        state += key + ": " + JSON.stringify(data.state[key]) + "\n";
+                    }
+                    document.getElementById("state").innerText = state;
+                })
+                .catch(error => {
+                    document.getElementById("error").innerText = "Error: Server unavailable";
+                    console.error(error);
+                });
+        }, 100);
+    </script>
+</head>
+
+<body>
+    <h1>Debug</h1>
+    <p>Mem: <span id="mem"></span></p>
+    <p>CPU: <span id="cpu"></span></p>
+    <p>Uptime: <span id="uptime"></span></p>
+    <p class="error" id="error"></p>
+
+    <p>Current state: <span id="state"></span></p>
+</body>
+
+</html>

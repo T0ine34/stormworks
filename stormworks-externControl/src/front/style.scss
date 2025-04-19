@@ -1,0 +1,388 @@
+
+$off-bg-color:   #f1f1f1;
+$hover-bg-color: #d1d1d1;
+$on-bg-color:    #b1b1b1;
+$white: #fff;
+
+
+@font-face {
+    font-family: 'Seven Segment';
+    src: url('fonts/SevenSegment.ttf') format('truetype');
+}
+
+#name{
+    display: none;
+}
+
+* {
+    transition: background-color .2s;
+    transition: box-shadow .2s;
+    transition: transform .2s;
+    transition: color .2s;
+    transition: opacity .2s;
+    transition: border-radius .2s;
+    transition: width .2s;
+    transition: height .2s;
+    transition: font-size .2s;
+    transition: padding .2s;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container {
+    margin: 0 auto;
+    display: grid;
+    gap: 10px;
+    font-size: 16px;
+
+    & > * {
+        padding: 1em;
+        margin: 0.5em;
+        min-width: 100px;
+        min-height: 50px;
+        background-color: $off-bg-color;
+    }
+
+    & * {
+        border: 1px solid #a5a5a5;
+        border-radius: 15px;
+    }
+
+    & i, & svg {
+        border : none;
+    }
+
+    &.main-container{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+    }
+}
+
+button {
+    box-shadow: 0 9px #999;
+
+    &:hover {
+        background-color: $hover-bg-color;
+    }
+
+    &.active {
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+        background-color: $on-bg-color !important;
+    }
+}
+
+.button {
+    > i, svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        font-size: 3em;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > .slider-button {
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+
+        &:hover{
+            background-color: $hover-bg-color;
+        }
+
+        // &:active{
+        //     background-color: $on-bg-color !important;
+        // }
+    }
+
+    &.horizontal{
+        flex-direction: row;
+
+        & > input {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 10px;
+            outline: none;
+            border-radius: 5px;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+    
+            &:hover {
+                opacity: 1;
+            }
+    
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 16px;
+                height: 50px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+    
+            &::-moz-range-thumb {
+                width: 16px;
+                height: 50px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+        }
+
+        & > .slider-button {
+            min-width: 50px;
+
+            &#decrease-btn::before{
+                content: '<';
+                font-size: 20px;
+            }
+
+            &#increase-btn::before{
+                content: '>';
+                font-size: 20px;
+            }
+        }
+    }
+
+    &.vertical{
+        flex-direction: column;
+
+        & > input{
+            width: 10px;
+            margin: 0 0 0 10px;
+            /* take all height of the parent without extending parent size */
+            height: auto;
+
+            transform: translate(-50%, 0);
+
+            -webkit-appearance: none;
+            appearance: none;
+            outline: none;
+            border-radius: 5px;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 50px;
+                height: 16px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            &::-moz-range-thumb {
+                width: 50px;
+                height: 16px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+        }
+
+        & > .slider-button {
+            &#decrease-btn::before{
+                content: 'v';
+                font-size: 20px;
+            }
+
+            &#increase-btn::before{
+                content: '^';
+                font-size: 20px;
+            }
+        }
+    }
+
+
+}
+
+.light {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    > i, svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        font-size: 3em;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: stretch;
+
+    & > * {
+        margin: 0.25em;
+        min-width: 50px;
+        min-height: 50px;
+        background-color: $off-bg-color;
+    }
+
+    & > .keypad-display {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        padding: 0 0.2em;
+        font-size: 3em;
+
+        font-family: 'Seven Segment';
+        background-color: $white;
+    }
+
+    & > .keypad-button{
+        margin-bottom: 0.5em;
+
+        >i {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-size: 3em;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &.backspace{
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        &#decimal {
+            padding-bottom: 1em;
+            & > i{
+                font-size: 10px;
+                align-items: end;
+            }
+        }
+
+        &#zero {
+            grid-column: 2 / 3;
+            grid-row: 5 / 6;
+        }
+    }
+}
+
+.number-display{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+
+    & > .display{
+        font-size: 3em;
+        font-family: 'Seven Segment';
+        background-color: $white;
+        padding: 0 0.2em;
+        max-width: 100%;
+        overflow: hidden;
+        text-align: right;
+    }
+}
+
+// contain an element named 'rotator' that will rotate with its children (rotation will be handled by javascript)
+// the rotatur must be as large and high as possible, but it must be a circle
+.rotation-selector{
+    display: flex;
+    justify-content: center;
+
+    & > .bounds-inner {
+        writing-mode: vertical-rl;
+        width: 100%;
+        max-width: 90%;
+        display: flex;
+        align-items: center;
+        border: none;
+
+        & > .a {
+            position: relative;
+            flex: 1 0 1px;
+            padding-block-start: 100%;
+            border: none;
+
+            & > .rotator{ // rotator element, must be a circle
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                color: white;
+                writing-mode: horizontal-tb;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                border-radius: 50%;
+                overflow: hidden;
+
+                &::before{
+                    // a circle at the top of the element
+                    content: '';
+                    position: absolute;
+                    top: 10px;
+                    left: 50%;
+                    width: 30px;
+                    height: 30px;
+                    border: 1px solid #a5a5a5;
+                    border-radius: 50%;
+                    box-shadow: 0 5px 5px #a5a5a5;
+                    transform: translate(-50%, 0);
+                }
+
+
+                & > * {
+                    border: none;
+                    box-shadow: none;
+                    width: 70%;
+                    height: 70%;
+                    background-color: transparent;
+                    transform: none;
+
+                    &.active,
+                    & .active{
+                        background-color: $off-bg-color !important;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-aspect-ratio: 10/9)  {
+        & > .bounds-inner {
+          writing-mode: horizontal-tb;
+        }
+    }
+}

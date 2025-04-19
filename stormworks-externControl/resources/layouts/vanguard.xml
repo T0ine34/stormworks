@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<buttonLayout>
+    <Slider channel="1" color="#FFFF00" col="1" row="1" width="1" height="1" min="-1" max="1" step="0.05" value="0" direction="right"></Slider>
+    <NumberDisplay channel="1" col="2" row="1" width="1" height="1" color="#ff0000" decimal="true"></NumberDisplay>
+    <RotationSelector channel="2" col="1" row="2" width="1" height="4" min="0" max="1" innerRotation="90" neutral="up">
+        <Slider channel="3" color="#FFFF00" col="1" row="1" width="1" height="1" min="-1" max="1" step="0.1" value="0" direction="left"></Slider>
+    </RotationSelector>
+    <RotationSelector channel="4" col="2" row="2" width="1" height="4" min="0" max="1" innerRotation="90" neutral="up">
+        <Slider channel="5" color="#FFFF00" col="1" row="1" width="1" height="1" min="-1" max="1" step="0.1" value="0" direction="left"></Slider>
+    </RotationSelector>
+</buttonLayout>

@@ -1,0 +1,9 @@
+/env
+*.pyc
+/dist
+/.sass-cache
+/*.egg-info
+/build
+/output.html
+node_modules/
+tests/server/report.xml
